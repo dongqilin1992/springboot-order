@@ -8,7 +8,7 @@
              debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
 <configuration scan="false" scanPeriod="60 seconds" debug="false">
 	<!-- 定义日志文件 输入位置 -->
-	<!--<property name="log_dir" value="${log.path.home}/@sofn.environment@/${project.artifactId}"/>-->
+	<property name="log_dir" value="${log.path.home}/${project.artifactId}"/>
 	<!-- 日志最大的历史 30天 -->
 	<property name="maxHistory" value="30"/>
 	<jmxConfigurator/>
@@ -117,11 +117,11 @@
 	<!-- DEBUG级别日志 appender -->
 	<appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<!-- 过滤器，只记录DEBUG级别的日志 -->
-		<!--<filter class="ch.qos.logback.classic.filter.LevelFilter">-->
-		<!--<level>DEBUG</level>-->
-		<!--<onMatch>ACCEPT</onMatch>-->
-		<!--<onMismatch>DENY</onMismatch>-->
-		<!--</filter>-->
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+		<level>DEBUG</level>
+		<onMatch>ACCEPT</onMatch>
+		<onMismatch>DENY</onMismatch>
+		</filter>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!-- 按天回滚 daily -->
 			<fileNamePattern>${log_dir}/%d{yyyy-MM-dd}/debug-log.log
