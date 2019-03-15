@@ -1,6 +1,5 @@
 package com.dongqilin;
 
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -12,7 +11,7 @@ import java.util.Map;
  * @author: dongql
  * @date: 2018/3/26 13:02
  */
-@ControllerAdvice
+//@ControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(RuntimeException.class)
     @ResponseBody

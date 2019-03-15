@@ -1,9 +1,19 @@
 package com.dongqilin.entity;
 
+import io.swagger.annotations.ApiModelProperty;
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class User {
+    @NotEmpty(message = "id不能为空")
+    @ApiModelProperty(name = "id", notes = "id")
     private Long id;
+    @NotEmpty(message = "用户名不能为空")
+    @ApiModelProperty(name = "username", notes = "用户名")
     private String username;
+    @NotEmpty(message = "密码不能为空")
+    @ApiModelProperty(name = "password", notes = "密码")
     private String password;
+    @ApiModelProperty(name = "salt", notes = "盐")
     private String salt;
 
     private Boolean locked = Boolean.FALSE;
