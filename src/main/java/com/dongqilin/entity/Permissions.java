@@ -9,6 +9,13 @@ public class Permissions {
 
     private Boolean available;
 
+    private Permissions(Builder builder) {
+        setId(builder.id);
+        setPermission(builder.permission);
+        setDescription(builder.description);
+        setAvailable(builder.available);
+    }
+
     public Long getId() {
         return id;
     }
@@ -22,7 +29,7 @@ public class Permissions {
     }
 
     public void setPermission(String permission) {
-        this.permission = permission == null ? null : permission.trim();
+        this.permission = permission;
     }
 
     public String getDescription() {
@@ -30,7 +37,7 @@ public class Permissions {
     }
 
     public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
+        this.description = description;
     }
 
     public Boolean getAvailable() {
@@ -39,5 +46,39 @@ public class Permissions {
 
     public void setAvailable(Boolean available) {
         this.available = available;
+    }
+
+    public static final class Builder {
+        private Long id;
+        private String permission;
+        private String description;
+        private Boolean available;
+
+        public Builder() {
+        }
+
+        public Builder id(Long val) {
+            id = val;
+            return this;
+        }
+
+        public Builder permission(String val) {
+            permission = val;
+            return this;
+        }
+
+        public Builder description(String val) {
+            description = val;
+            return this;
+        }
+
+        public Builder available(Boolean val) {
+            available = val;
+            return this;
+        }
+
+        public Permissions build() {
+            return new Permissions(this);
+        }
     }
 }
