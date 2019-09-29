@@ -1,6 +1,6 @@
 package com.dongqilin.controller;
 
-import com.dongqilin.entity.Order;
+import com.dongqilin.entity.OrderModel;
 import com.dongqilin.service.OrderFactory;
 import com.dongqilin.service.OrderService;
 import io.swagger.annotations.Api;
@@ -27,15 +27,15 @@ public class OrderController {
     @Transactional
     @RequestMapping(value = "/create/{id}", method = RequestMethod.GET, produces = {"application/json"})
     public void createOrder(@PathVariable("id") Integer id){
-        Order order = OrderFactory.getInstance().genOrder(id);
+        OrderModel order = OrderFactory.getInstance().genOrder(id);
         orderService.createOder(order);
 
     }
 
     @ApiOperation(value = "查询订单信息", notes = "查询订单信息", protocols = "http")
     @RequestMapping(value ="/query{id}", method = RequestMethod.GET, produces = {"application/json"})
-    public Order queryOder(@PathVariable("id") Integer id){
-        Order order = orderService.queryOder(id);
+    public OrderModel queryOder(@PathVariable("id") Integer id){
+        OrderModel order = orderService.queryOder(id);
         return order;
     }
 }

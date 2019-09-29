@@ -1,6 +1,6 @@
 package com.dongqilin.service;
 
-import com.dongqilin.entity.Order;
+import com.dongqilin.entity.OrderModel;
 import org.redisson.api.RLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,8 +26,8 @@ public class OrderFactory {
         return oderFactory;
     }
 
-    public Order genOrder(Integer userId) {
-        Order order = new Order();
+    public OrderModel genOrder(Integer userId) {
+        OrderModel order = new OrderModel();
         order.setUserId(userId);
         String s = genOrderNumber();
         order.setOrderNumber(s);
