@@ -90,13 +90,13 @@ public class SwaggerConfig {
 	}
 	
 	private List<ApiKey> apiKey() {
-		List<ApiKey> keys = new ArrayList<>(1);
+		List<ApiKey> keys = new ArrayList<ApiKey>(1);
 		keys.add(new ApiKey(apikeyName, keyName, password));
 	    return keys;
 	}
 
 	private List<SecurityContext> securityContext() {
-		List<SecurityContext> securityContext = new ArrayList<>(1);
+		List<SecurityContext> securityContext = new ArrayList<SecurityContext>(1);
 		securityContext.add(SecurityContext.builder()
 								.securityReferences(defaultAuth())
 								.forPaths(PathSelectors.any())

@@ -12,7 +12,6 @@ import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 /**
@@ -20,7 +19,7 @@ import org.springframework.context.annotation.Scope;
  * @author: dongql
  * @date: 2018/5/16 15:07
  */
-@Configuration
+//@Configuration
 public class RabbitmqConfig {
     public static final String DIRECT_EXCHANGE = "springboot-directExchange";
     public static final String DIRECT_ROUTINGKEY = "springbootDirect.";
