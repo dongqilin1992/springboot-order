@@ -3,8 +3,10 @@ package com.dongqilin.entity;
 import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.NotNull;
+
 public class User {
-    @NotEmpty(message = "id不能为空")
+    @NotNull(message = "id不能为空")
     @ApiModelProperty(name = "id", notes = "id")
     private Long id;
     @NotEmpty(message = "用户名不能为空")
